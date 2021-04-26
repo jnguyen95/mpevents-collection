@@ -74,9 +74,9 @@ void main() {
     s32 player_index = GetCurrentPlayerIndex();
     int numCoins = GetRandomByte() % 20;
 
-    ShowMessage(-1, piano_msg, 0, 0, 0, 0, 0)
-    ShowMessage(-1, piano_coins_msg, 0, 0, 0, 0, 0)
+    ShowMessage(-1, piano_msg, 0, 0, 0, 0, 0);
+    ShowMessage(-1, piano_coins_msg, 0, 0, 0, 0, 0);
 
-    AdjustPlayerCoinsGradual(player_index, -numCoins)
+    AdjustPlayerCoinsGradual(player_index, -numCoins);
     ShowPlayerCoinChange(player_index, -numCoins);
 }
