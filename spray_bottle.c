@@ -1,7 +1,6 @@
-// NAME: Piano takes away coins
+// NAME: Spray Bottle Event
 // GAMES: MP3_USA
 // EXECUTION: Direct
-// PARAM: Number|COIN_COST
 
 #include "ultra64.h"
 
@@ -58,25 +57,30 @@ struct player {
     // s8 pad2[3];
 };
 
-char *piano_msg =
-    "\x1A\x1A\x1A\x1A"
-    "The cursed piano has arrived!"
-    "\xFF";
-
-char *piano_coins_msg = 
-    "\x1A\x1A\x1A\x1A"
-    "The cursed piano will take your coins!"
+char *spray_bottle_msg =
+    "Whoops\xC2 Looks like you were sprayed with a spray bottle\xC2"
+    "\x0A"
+    "Time to buy a new set of clothes\xC2"
     "\xFF";
 
 extern s16 GetCurrentPlayerIndex();
 
+void cleanupMessage() {
+    func_800EC9DC();
+    CloseMessage();
+    func_800EC6EC();
+}
+
 void main() {
     s32 player_index = GetCurrentPlayerIndex();
     int numCoins = GetRandomByte() % 20;
+    numCoins++;
 
-    ShowMessage(-1, piano_msg, 0, 0, 0, 0, 0);
-    ShowMessage(-1, piano_coins_msg, 0, 0, 0, 0, 0);
+    ShowMessage(-1, spray_bottle_msg, 0, 0, 0, 0, 0);
+    cleanupMessage();
 
     AdjustPlayerCoinsGradual(player_index, -numCoins);
     ShowPlayerCoinChange(player_index, -numCoins);
+
+    SleepProcess(30);
 }

@@ -1,4 +1,4 @@
-// NAME: Lord Donator's Lucky Lamp Event (MP3)
+// NAME: Tom's Magic Lamp Event (MP3)
 // GAMES: MP3_USA
 // EXECUTION: Direct
 // AUTHOR: Kyon2570
@@ -86,34 +86,36 @@ extern s16 GetCurrentPlayerIndex();
 extern struct player *GetPlayerStruct(s32 player_index);
 extern s32 PlayerHasEmptyItemSlot(s32 player_index);
 
-char *lord_donator_msg =
-    "It is I\x82 Lord Donator\xC2"
+char *tom_msg =    
+    "Bingo\xC2 It\x5Cs Tom\xC2"
     "\xFF";
 
-char *lord_donator_not_full_inventory_msg =
-    "I will give you a lamp\xC2 Use it wisely\xC2"
+char *tom_not_full_inventory_msg =
+    "Tom will give you the best lamp"
+    "\xC2" // !
     "\xFF";
 
-char *lord_donator_full_inventory_msg =
+char *tom_full_inventory_msg =
     "You have too many items"
-    "\xC2"
-    "\x0A"
-    "The lamp is still mine\xC2 Hahahahahaha\xC2"
+    "\x85" // .
+    "\x0A" // Newline
+    "Too bad"
+    "\x85" // .
     "\xFF";
 
 void main() {
     s32 cur_player_index = GetCurrentPlayerIndex();
-    ShowMessage(-1, lord_donator_msg, 0, 0, 0, 0, 0);
+    ShowMessage(-1, tom_msg, 0, 0, 0, 0, 0);
     cleanupMessage();
     s32 open_index = PlayerHasEmptyItemSlot(cur_player_index);
     if (open_index != -1) {
         struct player *player = GetPlayerStruct(cur_player_index);
-        ShowMessage(-1, lord_donator_not_full_inventory_msg, 0, 0, 0, 0, 0);
+        ShowMessage(-1, tom_not_full_inventory_msg, 0, 0, 0, 0, 0);
         cleanupMessage();
-        player->items[open_index] = ITEM_LUCKY_LAMP;
+        player->items[open_index] = ITEM_MAGIC_LAMP;
     }
     else {
-        ShowMessage(-1, lord_donator_full_inventory_msg, 0, 0, 0, 0, 0);
+        ShowMessage(-1, tom_full_inventory_msg, 0, 0, 0, 0, 0);
         cleanupMessage();
     }
 }
