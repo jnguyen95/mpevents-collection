@@ -1,6 +1,7 @@
-// NAME: Spray Bottle Event
+// NAME: Spray Bottle Event (MP3)
 // GAMES: MP3_USA
 // EXECUTION: Direct
+// AUTHOR: Kyon2570
 
 #include "ultra64.h"
 
