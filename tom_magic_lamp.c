@@ -2,7 +2,9 @@
 // GAMES: MP3_USA
 // EXECUTION: Direct
 // AUTHOR: Kyon2570
+
 // BASE CODE: Give Item
+// https://github.com/PartyPlanner64/events/blob/master/C/Give%20Item%20(MP3).c
 
 #include "ultra64.h"
 

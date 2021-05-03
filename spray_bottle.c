@@ -3,6 +3,9 @@
 // EXECUTION: Direct
 // AUTHOR: Kyon2570
 
+// BASE CODE: Random Coins From Range
+// https://github.com/PartyPlanner64/events/blob/master/C/Give%20Random%20Coins%20in%20Range.c
+
 #include "ultra64.h"
 
 struct player {
