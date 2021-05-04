@@ -89,7 +89,7 @@ extern struct player *GetPlayerStruct(s32 player_index);
 extern s32 PlayerHasEmptyItemSlot(s32 player_index);
 
 char *lord_donator_msg =
-    "Fools\xC2 It is I\x82 Lord Dona'tor\xC2"
+    "Fools\xC2 It is I\x82 Lord Dona\x5Ctor\xC2"
     "\xFF";
 
 char *lord_donator_not_full_inventory_msg =

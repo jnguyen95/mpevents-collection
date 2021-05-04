@@ -81,7 +81,7 @@ char *too_many_stars_msg =
     "Thank you for your hard work doing the TRG Colosseum\xC2"
     "\x0A"
     "Unfortunately\x82 you have too many stars\x85"
-    "\xFF"
+    "\xFF";
 
 void main() {
     s32 cur_player_index = GetCurrentPlayerIndex();
