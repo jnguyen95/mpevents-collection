@@ -88,13 +88,13 @@ extern s16 GetCurrentPlayerIndex();
 extern struct player *GetPlayerStruct(s32 player_index);
 extern s32 PlayerHasEmptyItemSlot(s32 player_index);
 
-char *tom_msg =    
+char *tom_msg =
     "Bingo\xC2 It\x5Cs Tom\xC2"
     "\xFF";
 
 char *tom_not_full_inventory_msg =
-    "Tom will give you the best lamp"
-    "\xC2" // !
+    "I will give you a lamp for your efforts"
+    "\xC2 " // !
     "\xFF";
 
 char *tom_full_inventory_msg =

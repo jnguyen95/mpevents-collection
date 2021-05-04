@@ -4,6 +4,7 @@
 // AUTHOR: Kyon2570
 
 #include "ultra64.h"
+#define MAX_STARS 99
 
 struct player {
     s8 unk0;
@@ -76,21 +77,33 @@ char *free_star_msg =
     "Here\x5Cs a star to thank you for all of your efforts\xC2"
     "\xFF";
 
+char *too_many_stars_msg =
+    "Thank you for your hard work doing the TRG Colosseum\xC2"
+    "\x0A"
+    "Unfortunately\x82 you have too many stars\x85"
+    "\xFF"
+
 void main() {
     s32 cur_player_index = GetCurrentPlayerIndex();
     struct player *player = GetPlayerStruct(cur_player_index);
-
     ShowMessage(-1, trgc_msg, 0, 0, 0, 0, 0);
     cleanupMessage();
-    ShowMessage(-1, free_star_msg, 0, 0, 0, 0, 0);
-    cleanupMessage();
 
-    PlayMusic(111);
-    player->stars++;
-    SetBoardPlayerAnimation(-1, 6, 0);
-    func_8004ACE0(610, cur_player_index);
-    SleepProcess(60);
-    SleepProcess(50);
+    if (player->stars >= MAX_STARS) {
+        ShowMessage(-1, too_many_stars_msg, 0, 0, 0, 0, 0);
+        cleanupMessage();
+    }
+    else {
+        ShowMessage(-1, free_star_msg, 0, 0, 0, 0, 0);
+        cleanupMessage();
 
-    PlayMusic(GetBoardAudioIndex());
+        PlayMusic(111);
+        player->stars++;
+        SetBoardPlayerAnimation(-1, 6, 0);
+        func_8004ACE0(610, cur_player_index);
+        SleepProcess(60);
+        SleepProcess(50);
+
+        PlayMusic(GetBoardAudioIndex());
+    }
 }

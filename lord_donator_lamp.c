@@ -93,7 +93,7 @@ char *lord_donator_msg =
     "\xFF";
 
 char *lord_donator_not_full_inventory_msg =
-    "I will give you a lamp\xC2 Use it wisely\xC2"
+    "I will give you the best lamp\xC2 Use it wisely\xC2"
     "\xFF";
 
 char *lord_donator_full_inventory_msg =
