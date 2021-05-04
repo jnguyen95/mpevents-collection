@@ -77,7 +77,7 @@ void ReplacePlayerStars(int index, int new_star_count) {
 char *star_comm_msg = 
     "I hope you liked your stars\x82"
     "\x0A"
-    "because it\x5Cs time for star communism\xC2"
+    "because it\x5Cs time for equal star distribution\xC2"
     "\xFF";
 
 char *stars_leftover_msg =
